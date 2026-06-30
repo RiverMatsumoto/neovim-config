@@ -30,9 +30,23 @@ Requirements: Neovim 0.12+, Git, a C compiler, `make`, `curl`, `unzip`, `fd`,
 `ripgrep`, and the `tree-sitter` CLI. A Nerd Font is recommended. LazyVim can
 install the CLI through Mason during the first interactive startup.
 
+Clone the template into Neovim's configuration directory, then start Neovim:
+
+```sh
+git clone https://github.com/RiverMatsumoto/nvim-config.git ~/.config/nvim
+nvim
+```
+
+If GitHub SSH access is already configured, clone with SSH instead:
+
 ```sh
 git clone git@github.com:RiverMatsumoto/nvim-config.git ~/.config/nvim
-nvim
+```
+
+To update an existing installation later:
+
+```sh
+git -C ~/.config/nvim pull --ff-only
 ```
 
 Run `:LazyHealth` after the first installation. Enable language support through

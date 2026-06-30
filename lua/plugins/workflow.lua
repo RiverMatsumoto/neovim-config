@@ -1,7 +1,4 @@
 return {
-  { import = "lazyvim.plugins.extras.editor.overseer" },
-  { import = "lazyvim.plugins.extras.dap.core" },
-
   {
     "stevearc/overseer.nvim",
     opts = {
