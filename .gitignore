@@ -1,0 +1,6 @@
+*.log
+.DS_Store
+data/
+debug/
+doc/tags
+
