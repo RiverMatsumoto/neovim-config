@@ -6,18 +6,18 @@ and one ad-hoc shell without requiring terminal tabs.
 
 ## Workflow
 
-| Action | Key |
-| --- | --- |
-| Quick open | `Ctrl-P` |
-| Command palette | `Ctrl-Shift-P` |
-| Workspace search | `Ctrl-Shift-F` |
-| File explorer | `Ctrl-B` |
-| Toggle terminal | `Ctrl-Backtick` or `Ctrl-/` |
-| Run build/task | `Ctrl-Shift-B` or `<leader>rr` |
-| Task list | `<leader>rl` |
-| Debug continue | `F5` |
-| Breakpoint | `F9` |
-| Step over/into/out | `F10` / `F11` / `Shift-F11` |
+| Action             | Key                            |
+| ------------------ | ------------------------------ |
+| Quick open         | `Ctrl-P`                       |
+| Command palette    | `Ctrl-Shift-P`                 |
+| Workspace search   | `Ctrl-Shift-F`                 |
+| File explorer      | `Ctrl-B`                       |
+| Toggle terminal    | `Ctrl-Backtick` or `Ctrl-/`    |
+| Run build/task     | `Ctrl-Shift-B` or `<leader>rr` |
+| Task list          | `<leader>rl`                   |
+| Debug continue     | `F5`                           |
+| Breakpoint         | `F9`                           |
+| Step over/into/out | `F10` / `F11` / `Shift-F11`    |
 
 Use the terminal for one-off shell commands. Use Overseer for repeatable builds,
 tests, watchers, and servers. It automatically discovers many common project
@@ -31,6 +31,8 @@ Requirements: Neovim 0.12+, Git, a C compiler, `make`, `curl`, `unzip`, `fd`,
 install the CLI through Mason during the first interactive startup.
 
 Clone the template into Neovim's configuration directory, then start Neovim:
+
+Dependencies:
 
 ```sh
 git clone https://github.com/RiverMatsumoto/nvim-config.git ~/.config/nvim
