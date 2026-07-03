@@ -17,7 +17,7 @@ return {
 
         sources = {
           explorer = {
-            hidden = false,
+            hidden = true,
             ignored = false,
 
             matcher = {

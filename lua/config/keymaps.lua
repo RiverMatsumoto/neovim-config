@@ -41,6 +41,10 @@ map("n", "<F5>", function()
   require("dap").continue()
 end, { desc = "Debug: Start/Continue" })
 
+map("n", "<S-F5>", function()
+  require("dap").terminate()
+end, { desc = "Debug: Stop" })
+
 map("n", "<F9>", function()
   require("dap").toggle_breakpoint()
 end, { desc = "Debug: Toggle Breakpoint" })
@@ -80,12 +84,15 @@ map("n", "Y", '"+yy', { desc = "Yank Line to Clipboard" })
 map("n", "<C-s>", "<cmd>silent! update<cr>", { desc = "Save File" })
 map("i", "<C-s>", "<Esc><cmd>silent! update<cr>gi", { desc = "Save File" })
 
+-- Code outline sidebar
 map("n", "<leader>o", "<cmd>Outline<cr>", { desc = "Toggle Outline Sidebar" })
 
+-- Ctrl backspace delete word
 map("i", "<C-BS>", "<C-w>", { desc = "Delete Previous Word" })
 map("i", "<C-h>", "<C-w>", { desc = "Delete Previous Word" })
 map("c", "<C-BS>", "<C-w>", { desc = "Delete Previous Word" })
 map("c", "<C-h>", "<C-w>", { desc = "Delete Previous Word" })
 
+-- Go to defintions
 map("n", "<leader>gd", vim.lsp.buf.definition, { desc = "LSP: Go to Definition" })
 map("n", "<leader>gi", vim.lsp.buf.implementation, { desc = "LSP: Go to Implementation" })
