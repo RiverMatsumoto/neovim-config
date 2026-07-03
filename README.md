@@ -35,14 +35,14 @@ Clone the template into Neovim's configuration directory, then start Neovim:
 Dependencies:
 
 ```sh
-git clone https://github.com/RiverMatsumoto/nvim-config.git ~/.config/nvim
+git clone https://github.com/RiverMatsumoto/neovim-config.git ~/.config/nvim
 nvim
 ```
 
 If GitHub SSH access is already configured, clone with SSH instead:
 
 ```sh
-git clone git@github.com:RiverMatsumoto/nvim-config.git ~/.config/nvim
+git clone git@github.com:RiverMatsumoto/neovim-config.git ~/.config/nvim
 ```
 
 To update an existing installation later:
