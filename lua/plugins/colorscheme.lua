@@ -4,6 +4,16 @@ return {
     name = "gruvbox-material",
     lazy = false,
     priority = 1000,
-    opts = {},
+    opts = {
+      background = {
+        transparent = true,
+      },
+      float = {
+        force_background = false,
+      },
+      signs = {
+        force_background = false,
+      },
+    },
   },
 }

@@ -1,5 +1,6 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
+local comment_api = require("Comment.api")
 
 local function terminal()
   Snacks.terminal.toggle(nil, {
@@ -26,7 +27,29 @@ map("n", "<C-b>", function()
 end, { desc = "Toggle Explorer" })
 
 map({ "n", "t" }, "<C-`>", terminal, { desc = "Toggle Terminal" })
-map({ "n", "t" }, "<C-/>", terminal, { desc = "Toggle Terminal" })
+map({ "n", "t" }, "<C-\\>", terminal, { desc = "Toggle Terminal" })
+
+map({ "n", "x" }, "<C-_>", function()
+  if vim.api.nvim_get_mode().mode == "n" then
+    comment_api.toggle.linewise.current()
+    return
+  end
+
+  local esc = vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
+  vim.api.nvim_feedkeys(esc, "nx", false)
+  comment_api.toggle.linewise(vim.fn.visualmode())
+end, { desc = "Toggle Comment" })
+
+map({ "n", "x" }, "<C-/>", function()
+  if vim.api.nvim_get_mode().mode == "n" then
+    comment_api.toggle.linewise.current()
+    return
+  end
+
+  local esc = vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
+  vim.api.nvim_feedkeys(esc, "nx", false)
+  comment_api.toggle.linewise(vim.fn.visualmode())
+end, { desc = "Toggle Comment" })
 
 map("n", "<A-Left>", "<cmd>bprevious<cr>", { desc = "Previous Buffer" })
 map("n", "<A-Right>", "<cmd>bnext<cr>", { desc = "Next Buffer" })

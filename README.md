@@ -15,6 +15,8 @@ and one ad-hoc shell without requiring terminal tabs.
 | Toggle terminal    | `Ctrl-Backtick` or `Ctrl-/`    |
 | Run build/task     | `Ctrl-Shift-B` or `<leader>rr` |
 | Task list          | `<leader>rl`                   |
+| PlantUML preview   | `<leader>mp` in `.puml` files  |
+| PlantUML export    | `<leader>me` in `.puml` files  |
 | Debug continue     | `F5`                           |
 | Breakpoint         | `F9`                           |
 | Step over/into/out | `F10` / `F11` / `Shift-F11`    |
@@ -54,6 +56,11 @@ git -C ~/.config/nvim pull --ff-only
 Run `:LazyHealth` after the first installation. Enable language support through
 `:LazyExtras`; language extras configure the relevant LSP, formatter, debugger,
 Treesitter parsers, and test adapters together.
+
+PlantUML preview support uses the local `plantuml` command. In a PlantUML buffer
+run `:PlantumlPreview` to render an SVG into Neovim's cache directory and open
+it in `sxiv`, or `:PlantumlExport` to write an SVG next to the source file. Pass
+a format such as `:PlantumlExport png` when needed.
 
 ## Project tasks
 
