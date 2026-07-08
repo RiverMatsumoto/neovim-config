@@ -14,7 +14,19 @@ return {
 
       dap.adapters.coreclr = {
         type = "executable",
-        command = vim.fn.expand("~/.local/bin/netcoredbg"),
+        command = (function()
+          local mason_netcoredbg = vim.fn.stdpath("data") .. "/mason/bin/netcoredbg"
+          if vim.fn.executable(mason_netcoredbg) == 1 then
+            return mason_netcoredbg
+          end
+
+          local path_netcoredbg = vim.fn.exepath("netcoredbg")
+          if path_netcoredbg ~= "" then
+            return path_netcoredbg
+          end
+
+          return vim.fn.expand("~/.local/bin/netcoredbg")
+        end)(),
         args = { "--interpreter=vscode" },
       }
 
@@ -56,6 +68,18 @@ return {
         dap.continue()
       end, { desc = "Debug: Start/Continue" })
 
+      map("n", "<S-F5>", function()
+        dap.terminate()
+      end, { desc = "Debug: Stop" })
+
+      map("n", "<F17>", function()
+        dap.terminate()
+      end, { desc = "Debug: Stop" })
+
+      map("n", "<Esc>[15;2~", function()
+        dap.terminate()
+      end, { desc = "Debug: Stop" })
+
       map("n", "<F9>", function()
         dap.toggle_breakpoint()
       end, { desc = "Debug: Toggle Breakpoint" })
@@ -69,6 +93,14 @@ return {
       end, { desc = "Debug: Step Into" })
 
       map("n", "<S-F11>", function()
+        dap.step_out()
+      end, { desc = "Debug: Step Out" })
+
+      map("n", "<F23>", function()
+        dap.step_out()
+      end, { desc = "Debug: Step Out" })
+
+      map("n", "<Esc>[23;2~", function()
         dap.step_out()
       end, { desc = "Debug: Step Out" })
 

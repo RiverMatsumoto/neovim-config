@@ -39,6 +39,10 @@ return {
         },
 
         sources = {
+          files = {
+            hidden = false,
+          },
+
           explorer = {
             hidden = true,
             ignored = false,
@@ -59,10 +63,32 @@ return {
             },
           },
         },
+
+        win = {
+          input = {
+            keys = {
+              ["<Esc>h"] = { "toggle_hidden", mode = { "i", "n" } },
+            },
+          },
+          list = {
+            keys = {
+              ["<Esc>h"] = "toggle_hidden",
+            },
+          },
+        },
       },
 
       explorer = {
         enabled = true,
+      },
+    },
+    keys = {
+      {
+        "<leader><space>",
+        function()
+          Snacks.picker.files({ hidden = false })
+        end,
+        desc = "Find Files (Root Dir)",
       },
     },
   },

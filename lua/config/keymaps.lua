@@ -68,6 +68,14 @@ map("n", "<S-F5>", function()
   require("dap").terminate()
 end, { desc = "Debug: Stop" })
 
+map("n", "<F17>", function()
+  require("dap").terminate()
+end, { desc = "Debug: Stop" })
+
+map("n", "<Esc>[15;2~", function()
+  require("dap").terminate()
+end, { desc = "Debug: Stop" })
+
 map("n", "<F9>", function()
   require("dap").toggle_breakpoint()
 end, { desc = "Debug: Toggle Breakpoint" })
@@ -84,10 +92,21 @@ map("n", "<S-F11>", function()
   require("dap").step_out()
 end, { desc = "Debug: Step Out" })
 
+map("n", "<F23>", function()
+  require("dap").step_out()
+end, { desc = "Debug: Step Out" })
+
+map("n", "<Esc>[23;2~", function()
+  require("dap").step_out()
+end, { desc = "Debug: Step Out" })
+
 -- VS Code-style LSP navigation.
 map("n", "<F12>", vim.lsp.buf.definition, { desc = "LSP: Go to Definition" })
 map("n", "<S-F12>", vim.lsp.buf.references, { desc = "LSP: Find References" })
--- map("n", "<C-F12>", vim.lsp.buf.implementation, { desc = "LSP: Go to Implementation" })
+map("n", "<F24>", vim.lsp.buf.references, { desc = "LSP: Find References" })
+map("n", "<Esc>[24;2~", vim.lsp.buf.references, { desc = "LSP: Find References" })
+map("n", "<C-F12>", vim.lsp.buf.implementation, { desc = "LSP: Go to Implementation" })
+map("n", "<F36>", vim.lsp.buf.implementation, { desc = "LSP: Go to Implementation" })
 map("n", "<Esc>[24;5~", vim.lsp.buf.implementation, {
   desc = "LSP: Go to Implementation",
 })
@@ -95,6 +114,8 @@ map("n", "<Esc>[24;5~", vim.lsp.buf.implementation, {
 -- Common extras.
 map("n", "<A-F12>", vim.lsp.buf.declaration, { desc = "LSP: Go to Declaration" })
 map("n", "<C-S-F12>", vim.lsp.buf.type_definition, { desc = "LSP: Go to Type Definition" })
+map("n", "<F48>", vim.lsp.buf.type_definition, { desc = "LSP: Go to Type Definition" })
+map("n", "<Esc>[24;6~", vim.lsp.buf.type_definition, { desc = "LSP: Go to Type Definition" })
 
 -- Rename / code actions.
 map("n", "<F2>", vim.lsp.buf.rename, { desc = "LSP: Rename" })
