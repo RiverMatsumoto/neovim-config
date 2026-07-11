@@ -41,6 +41,7 @@ return {
         sources = {
           files = {
             hidden = false,
+            exclude = { "*.uid" },
           },
 
           explorer = {

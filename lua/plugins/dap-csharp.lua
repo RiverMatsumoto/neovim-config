@@ -36,6 +36,8 @@ return {
           name = "Attach to Godot",
           request = "attach",
           processId = require("dap.utils").pick_process,
+          justMyCode = true,
+          requireExactSource = true,
         },
       }
 
