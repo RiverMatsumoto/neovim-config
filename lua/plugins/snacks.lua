@@ -2,9 +2,20 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
+      scratch = {
+        ft = "text",
+      },
+
       scroll = {
         animate = {
-          duration = { step = 5, total = 80 },
+          duration = { step = 5, total = 120 },
+          easing = "outCubic",
+        },
+
+        animate_repeat = {
+          delay = 100,
+          duration = { step = 5, total = 60 },
+          easing = "outCubic",
         },
       },
 

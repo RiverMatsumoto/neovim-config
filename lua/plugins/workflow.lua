@@ -1,5 +1,14 @@
 return {
   {
+    "hedyhli/outline.nvim",
+    opts = {
+      outline_window = {
+        auto_jump = true,
+      },
+    },
+  },
+
+  {
     "stevearc/overseer.nvim",
     opts = {
       dap = true,
