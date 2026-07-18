@@ -6,4 +6,5 @@ vim.opt.sidescrolloff = 8
 vim.opt.wrap = false
 vim.opt.confirm = true
 vim.opt.mouse = "a"
-
+vim.opt.mousescroll = "ver:1"
+vim.opt.ttimeoutlen = 0

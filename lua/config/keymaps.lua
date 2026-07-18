@@ -140,3 +140,16 @@ map("c", "<C-h>", "<C-w>", { desc = "Delete Previous Word" })
 -- Go to defintions
 map("n", "<leader>gd", vim.lsp.buf.definition, { desc = "LSP: Go to Definition" })
 map("n", "<leader>gi", vim.lsp.buf.implementation, { desc = "LSP: Go to Implementation" })
+
+-- Native Treesitter selection. Flash's conflicting mapping is disabled in its
+-- plugin spec so these mappings remain authoritative after lazy loading.
+map({ "n", "x" }, "<C-Space>", function()
+  vim.treesitter.select("parent")
+end, { desc = "Treesitter: Expand Selection" })
+
+local function shrink_treesitter_selection()
+  vim.treesitter.select("child")
+end
+
+map("x", "<C-S-Space>", shrink_treesitter_selection, { desc = "Treesitter: Shrink Selection" })
+map("x", "<BS>", shrink_treesitter_selection, { desc = "Treesitter: Shrink Selection" })

@@ -15,20 +15,6 @@ return {
         lsp_format = "prefer",
       })
 
-      -- Used for format-on-save.
-      -- opts.format_on_save = function(bufnr)
-      --   if vim.bo[bufnr].filetype == "cs" then
-      --     return {
-      --       timeout_ms = 2000,
-      --       lsp_format = "prefer",
-      --     }
-      --   end
-      --
-      --   return {
-      --     timeout_ms = 500,
-      --     lsp_format = "fallback",
-      --   }
-      -- end
     end,
   },
 }

@@ -1,5 +1,29 @@
 return {
   {
+    "folke/flash.nvim",
+    keys = {
+      { "<C-Space>", false, mode = { "n", "o", "x" } },
+    },
+  },
+
+  {
+    "nvim-mini/mini.surround",
+    opts = {
+      mappings = {
+        add = "",
+      },
+    },
+    keys = {
+      {
+        "S",
+        ":<C-u>lua MiniSurround.add('visual')<CR>",
+        mode = "x",
+        desc = "Add Surrounding",
+      },
+    },
+  },
+
+  {
     "hedyhli/outline.nvim",
     opts = {
       outline_window = {

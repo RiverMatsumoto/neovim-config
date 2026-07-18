@@ -30,6 +30,18 @@ return {
         args = { "--interpreter=vscode" },
       }
 
+      local codelldb = vim.fn.stdpath("data") .. "/mason/bin/codelldb"
+      if vim.fn.executable(codelldb) == 1 then
+        dap.adapters.codelldb = {
+          type = "server",
+          port = "${port}",
+          executable = {
+            command = codelldb,
+            args = { "--port", "${port}" },
+          },
+        }
+      end
+
       dap.configurations.cs = {
         {
           type = "coreclr",
